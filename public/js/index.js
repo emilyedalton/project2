@@ -68,17 +68,20 @@ var refreshExamples = function() {
 var handleFormSubmit = function(event) {
   event.preventDefault();
 
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+  var newMovie = {
+    movieTitle: $movieTitle.val().trim(),
+    movieLink: $movieLink.val().trim(),
+    movieDesc: $movieDesc.val().trim(),
+    movieImg: $movieImg.val().trim(),
+    userReview: $userReview.val().trim(),
+    userName: $userName.val().trim()
   };
 
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
-    return;
-  }
+  // if (!(newMovie.text && example.description)) {
+  //   alert("You must enter an example text and description!");
+  //   return;
 
-  API.saveExample(example).then(function() {
+  API.saveExample(newMovie).then(function() {
     refreshExamples();
   });
 
