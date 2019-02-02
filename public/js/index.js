@@ -1,6 +1,10 @@
 // Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
+var $movieTitle = $("#movie-title");
+var $movieLink = $("#movie-link");
+var $movieDesc = $("#movie-desc");
+var $movieImg = $("#movie-img");
+var $userReview = $("#user-review");
+var $userName = $("#user-name");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 
