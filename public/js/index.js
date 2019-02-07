@@ -22,8 +22,34 @@ var API = {
   },
   getExamples: function() {
     return $.ajax({
-      url: "api/examples",
+      url: "/api/examples",
       type: "GET"
+    }).then(function(movieData) {
+      //log the moviedata
+      console.log(movieData);
+
+      //looping through each of the reviews and movie info
+      for (var i = 0; i < movieData.length; i++) {
+        //get a reference to the movietitle and populate it with the movie title
+        var movieTitle = $(".is-scroll-wrapper");
+        movieTitle.append(
+          $("<div class='card is-showcase is-blue'>")
+            .html(
+              "<h5>" +
+                movieData[i].movieTitle +
+                "<p>" +
+                "user name:" +
+                " " +
+                movieData[i].userName +
+                "<p>" +
+                "User Review:" +
+                " " +
+                movieData[i].userReview
+            )
+            .append(`picture <img src= ${movieData[i].movieImg}>`)
+        );
+        // tableList.append(movieTitle);
+      }
     });
   },
   deleteExample: function(id) {
@@ -104,3 +130,4 @@ var handleDeleteBtnClick = function() {
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
+refreshExamples();
