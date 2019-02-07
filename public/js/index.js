@@ -33,18 +33,20 @@ var API = {
         //get a reference to the movietitle and populate it with the movie title
         var movieTitle = $(".is-scroll-wrapper");
         movieTitle.append(
-          $("<div class='card is-showcase is-blue'>").html(
-            "<h5>" +
-              movieData[i].movieTitle +
-              "<p>" +
-              "user name:" +
-              " " +
-              movieData[i].userName +
-              "<p>" +
-              "User Review:" +
-              " " +
-              movieData[i].userReview
-          )
+          $("<div class='card is-showcase is-blue'>")
+            .html(
+              "<h5>" +
+                movieData[i].movieTitle +
+                "<p>" +
+                "user name:" +
+                " " +
+                movieData[i].userName +
+                "<p>" +
+                "User Review:" +
+                " " +
+                movieData[i].userReview
+            )
+            .append(`picture <img src= ${movieData[i].movieImg}>`)
         );
         // tableList.append(movieTitle);
       }
