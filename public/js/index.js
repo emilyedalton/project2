@@ -32,6 +32,8 @@ var API = {
       for (var i = 0; i < movieData.length; i++) {
         //get a reference to the movietitle and populate it with the movie title
         var movieTitle = $(".is-scroll-wrapper");
+        var movieRev = $(".is-scroll-wrapper");
+
         movieTitle.append(
           $("<div class='card is-showcase is-blue'>").html(
             `<img src= ${
@@ -41,12 +43,8 @@ var API = {
             }`
           )
         );
-        // tableList.append(movieTitle);
-        var movieRev = $(
-          ".columns has-horizontal-scroll is-marginless is-transparent"
-        );
         movieRev.append(
-          $("<div class='.card is-quote is-viscious-stance>").html(
+          $("<div class='card is-quote is-viscious-stance>").html(
             `<h5> ${movieData[i].movieTitle} <p> User Name: ${
               movieData[i].userName
             }`
