@@ -31,8 +31,10 @@ var API = {
       //looping through each of the reviews and movie info
       for (var i = 0; i < movieData.length; i++) {
         //get a reference to the movietitle and populate it with the movie title
-        var movieTitle = $("#movieTitle");
-        movieTitle.append($("<h5>").text(movieData[i].movieTitle));
+        var movieTitle = $(".is-scroll-wrapper");
+        movieTitle.append(
+          $("<div class='card is-showcase is-blue'>").html(movieData[i].movieTitle)
+        );
         // tableList.append(movieTitle);
       }
     });
