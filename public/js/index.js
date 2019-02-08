@@ -7,6 +7,8 @@ var $userReview = $("#user-review");
 var $userName = $("#user-name");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
+var $userRating = $("#user-rating");
+
 
 // The API object contains methods for each kind of request we'll make
 var API = {
@@ -102,7 +104,8 @@ var handleFormSubmit = function(event) {
     movieDesc: $movieDesc.val().trim(),
     movieImg: $movieImg.val().trim(),
     userReview: $userReview.val().trim(),
-    userName: $userName.val().trim()
+    userName: $userName.val().trim(),
+    userRating: $userRating.val().trim()
   };
 
   // if (!(newMovie.text && example.description)) {
