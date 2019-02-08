@@ -45,12 +45,14 @@ var API = {
           )
         );
         movieRev.append(
-          $("<div class='card is-quote is-viscious-stance>").html(
-            `<h5> ${movieData[i].movieTitle} <p> User Name: ${
-              movieData[i].userName
-            }`
-          )
+          // $("<div class='card is-quote is-viscious-stance>").html(
+          //   `<h5> ${movieData[i].movieTitle} <p> User Name: ${
+          //     movieData[i].userName
+          //   }`
+          // )
+          "prepend"
         );
+        movieRev.prepend("yo");
       }
     });
   },
