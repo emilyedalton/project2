@@ -27,18 +27,19 @@ var API = {
     }).then(function(movieData) {
       //log the moviedata
       console.log(movieData);
-
       //looping through each of the reviews and movie info
       for (var i = 0; i < movieData.length; i++) {
         //get a reference to the movietitle and populate it with the movie title
         var movieTitle = $(".is-scroll-wrapper");
-        var movieRev = $(".is-scroll-wrapper");
+        var movieRev = $("#is-scroll-wrapper");
 
         movieTitle.append(
           $("<div class='card is-showcase is-blue'>").html(
             `<img src= ${
               movieData[i].movieImg
-            } style="height:100px; width: 70px; float: left;">${movieData[i].movieTitle}  user name: ${movieData[i].userName} User Review: ${
+            } style="height:100px; width: 70px; float: left;">${
+              movieData[i].movieTitle
+            }  user name: ${movieData[i].userName} User Review: ${
               movieData[i].userReview
             }`
           )
@@ -53,14 +54,14 @@ var API = {
       }
     });
   },
-  deleteExample: function(id) {
+  //This is the ajax call that goes to the omdb route
+  getOmdb: function() {
     return $.ajax({
-      url: "api/examples/" + id,
-      type: "DELETE"
+      url: "/api/omdb",
+      type: "GET"
     });
   }
 };
-
 // refreshExamples gets new examples from the db and repopulates the list
 var refreshExamples = function() {
   API.getExamples().then(function(data) {
