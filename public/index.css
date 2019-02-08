@@ -649,7 +649,7 @@ header button:focus {
 }
 .card.is-showcase {
   color: #fff;
-  height: 180px;
+  height: 200px;
   padding: 24px 12px;
 }
 .card.is-showcase, .card.is-quote {
