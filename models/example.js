@@ -41,6 +41,11 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       }
     },
+    userRating: {
+      field: "user_rating",
+      type: DataTypes.DECIMAL,
+      allowNull: true
+    },
     userName: {
       field: "username",
       type: DataTypes.STRING,
