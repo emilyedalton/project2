@@ -4,7 +4,6 @@ var $movieLink = $("#movie-link");
 var $movieDesc = $("#movie-desc");
 var $movieImg = $("#movie-img");
 var $userReview = $("#user-review");
-var $userRating = $("#user-rating");
 var $userName = $("#user-name");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
@@ -103,7 +102,6 @@ var handleFormSubmit = function(event) {
     movieDesc: $movieDesc.val().trim(),
     movieImg: $movieImg.val().trim(),
     userReview: $userReview.val().trim(),
-    userRating: $userRating.val().trim(),
     userName: $userName.val().trim()
   };
 
