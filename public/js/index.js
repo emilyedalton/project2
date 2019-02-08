@@ -4,6 +4,7 @@ var $movieLink = $("#movie-link");
 var $movieDesc = $("#movie-desc");
 var $movieImg = $("#movie-img");
 var $userReview = $("#user-review");
+var $userRating = $("#user-rating");
 var $userName = $("#user-name");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
@@ -31,7 +32,7 @@ var API = {
       for (var i = 0; i < movieData.length; i++) {
         //get a reference to the movietitle and populate it with the movie title
         var movieTitle = $(".is-scroll-wrapper");
-        var movieRev = $("#is-scroll-wrapper");
+        var movieRev = $(".is-scroll-wrapper");
 
         movieTitle.append(
           $("<div class='card is-showcase is-blue'>").html(
@@ -45,7 +46,7 @@ var API = {
           )
         );
         movieRev.append(
-          $("<div class='card is-quote is-viscious-stance>").html(
+          $("<div class='card is-showcase is-blue>").html(
             `<h5> ${movieData[i].movieTitle} <p> User Name: ${
               movieData[i].userName
             }`
@@ -102,6 +103,7 @@ var handleFormSubmit = function(event) {
     movieDesc: $movieDesc.val().trim(),
     movieImg: $movieImg.val().trim(),
     userReview: $userReview.val().trim(),
+    userRating: $userRating.val().trim(),
     userName: $userName.val().trim()
   };
 
