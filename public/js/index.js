@@ -6,8 +6,8 @@ var $movieImg = $("#movie-img");
 var $userReview = $("#user-review");
 var $userName = $("#user-name");
 var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
-
+// var exampleList = $("#example-list");
+var $userRating = $("#user-rating");
 // The API object contains methods for each kind of request we'll make
 var API = {
   saveExample: function(example) {
@@ -16,7 +16,7 @@ var API = {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/examples",
+      url: "/api/examples",
       data: JSON.stringify(example)
     });
   },
@@ -45,12 +45,11 @@ var API = {
           )
         );
         movieRev.append(
-          // $("<div class='card is-quote is-viscious-stance>").html(
-          //   `<h5> ${movieData[i].movieTitle} <p> User Name: ${
-          //     movieData[i].userName
-          //   }`
-          // )
-          "prepend"
+          $("<div class='card is-quote is-viscious-stance>").html(
+            `<h5> ${movieData[i].movieTitle} <p> User Name: ${
+              movieData[i].userName
+            }`
+          )
         );
         movieRev.prepend("yo");
       }
@@ -104,7 +103,8 @@ var handleFormSubmit = function(event) {
     movieDesc: $movieDesc.val().trim(),
     movieImg: $movieImg.val().trim(),
     userReview: $userReview.val().trim(),
-    userName: $userName.val().trim()
+    userName: $userName.val().trim(),
+    userRating: $userRating.val().trim()
   };
 
   // if (!(newMovie.text && example.description)) {

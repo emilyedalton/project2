@@ -44,10 +44,7 @@ module.exports = function(sequelize, DataTypes) {
     userRating: {
       field: "user_rating",
       type: DataTypes.DECIMAL,
-      allowNull: false,
-      validate: {
-        len: [3]
-      }
+      allowNull: true
     },
     userName: {
       field: "username",
