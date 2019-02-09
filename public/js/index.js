@@ -9,10 +9,12 @@ var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 var $userRating = $("#user-rating");
 
+// var userRat = $(".card is-showcase is-blue");
+// userRat.append($("#user-rating").rating());
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  saveExample: function(example) {
+  saveExample: function (example) {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
@@ -22,11 +24,11 @@ var API = {
       data: JSON.stringify(example)
     });
   },
-  getExamples: function() {
+  getExamples: function () {
     return $.ajax({
       url: "/api/examples",
       type: "GET"
-    }).then(function(movieData) {
+    }).then(function (movieData) {
       //log the moviedata
       console.log(movieData);
       //looping through each of the reviews and movie info
@@ -38,26 +40,31 @@ var API = {
         movieTitle.append(
           $("<div class='card is-showcase is-blue'>").html(
             `<img src= ${
-              movieData[i].movieImg
+            movieData[i].movieImg
             } style="height:100px; width: 70px; float: left;">${
-              movieData[i].movieTitle
+            movieData[i].movieTitle
             }  user name: ${movieData[i].userName} User Review: ${
-              movieData[i].userReview
-            }`
-          )
+            movieData[i].userReview
+            }
+            User Rating: ${movieData[i].userRating}/5`
+          ),
+          // $("#user-rating").rating({displayOnly: true, step: 0.5})
         );
         movieRev.append(
           $("<div class='card is-showcase is-blue>").html(
             `<h5> ${movieData[i].movieTitle} <p> User Name: ${
-              movieData[i].userName
+            movieData[i].userName
             }`
           )
         );
       }
     });
   },
+
+
+
   //This is the ajax call that goes to the omdb route
-  getOmdb: function() {
+  getOmdb: function () {
     return $.ajax({
       url: "/api/omdb",
       type: "GET"
@@ -65,9 +72,9 @@ var API = {
   }
 };
 // refreshExamples gets new examples from the db and repopulates the list
-var refreshExamples = function() {
-  API.getExamples().then(function(data) {
-    var $examples = data.map(function(example) {
+var refreshExamples = function () {
+  API.getExamples().then(function (data) {
+    var $examples = data.map(function (example) {
       var $a = $("<a>")
         .text(example.text)
         .attr("href", "/example/" + example.id);
@@ -95,7 +102,7 @@ var refreshExamples = function() {
 
 // handleFormSubmit is called whenever we submit a new example
 // Save the new example to the db and refresh the list
-var handleFormSubmit = function(event) {
+var handleFormSubmit = function (event) {
   event.preventDefault();
 
   var newMovie = {
@@ -112,7 +119,7 @@ var handleFormSubmit = function(event) {
   //   alert("You must enter an example text and description!");
   //   return;
 
-  API.saveExample(newMovie).then(function() {
+  API.saveExample(newMovie).then(function () {
     refreshExamples();
   });
 
@@ -122,12 +129,12 @@ var handleFormSubmit = function(event) {
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
 // Remove the example from the db and refresh the list
-var handleDeleteBtnClick = function() {
+var handleDeleteBtnClick = function () {
   var idToDelete = $(this)
     .parent()
     .attr("data-id");
 
-  API.deleteExample(idToDelete).then(function() {
+  API.deleteExample(idToDelete).then(function () {
     refreshExamples();
   });
 };
