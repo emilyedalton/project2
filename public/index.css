@@ -143,7 +143,7 @@ h5.has-fancy-border span.is-purple::before,
 h5.has-fancy-border span.is-purple::after {
   background: #b19fff;
 }
-h1.has-fancy-border span.is-pink,
+/* h1.has-fancy-border span.is-pink,
 h2.has-fancy-border span.is-pink,
 h3.has-fancy-border span.is-pink,
 h4.has-fancy-border span.is-pink,
@@ -180,7 +180,7 @@ h4.has-fancy-border span.is-green::after,
 h5.has-fancy-border span.is-green::before,
 h5.has-fancy-border span.is-green::after {
   background: #497d3b;
-}
+} */
 h1.has-fancy-border span::before, h1.has-fancy-border span::after,
 h2.has-fancy-border span::before,
 h2.has-fancy-border span::after,
@@ -259,7 +259,7 @@ a {
 }
 
 main {
-  background-color: #dfddfc;
+  background: linear-gradient( #283c86, #45a247); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   width: 100vw;
   min-height: 100vh;
   display: flex;
@@ -356,7 +356,7 @@ main.is-dark ::-webkit-scrollbar-thumb {
   scroll-snap-type: mandatory;
   -webkit-overflow-scrolling: touch;
   align-self: flex-start;
-  background-color: rgba(239, 239, 239, 0.2);
+  /* background-color: rgba(239, 239, 239, 0.2); */
   display: flex;
   flex-flow: row nowrap;
   overflow-x: scroll;
@@ -721,7 +721,8 @@ header button:focus {
   width: 100%;
 }
 .card.is-blue {
-  background-image: linear-gradient(-225deg, #7de2fc 0%, #b9b6e5 100%);
+  background: linear-gradient( #155799,  #159957); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 25px;
 }
 .card.is-blue .card-image {
   background-image: url("https://www.portersquarebooks.com/sites/portersquarebooks.com/files/teaspoonearthandsea.jpg");

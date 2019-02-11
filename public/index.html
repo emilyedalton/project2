@@ -35,6 +35,69 @@
                         <button class="goDark">
                             <i class="fas fa-cat"></i>
                         </button>
+
+                        <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+    Add a Review!
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Add a Review!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="col-8 offset-2">
+                <!-- <h1>{{msg}}</h1> -->
+                <!-- <h2>This is our Home Page!</h2> -->
+                <form class="clearfix mb-4" action="POST">
+                    <div class="form-group">
+                        <label for="example-text">Movie Name</label>
+                        <input type="text" id="movie-title" class="form-control" aria-describedby="example-text"
+                            placeholder="Enter Example Text">
+                    </div>
+                    <!-- <div class="form-group">
+                        <label for="example-text">URL</label>
+                        <input type="text" id="movie-link" class="form-control" aria-describedby="example-text"
+                            placeholder="Enter Example Text">
+                    </div> -->
+                    <!-- <div class="form-group">
+                        <label for="example-text">Description</label>
+                        <input type="text" id="movie-desc" class="form-control" aria-describedby="example-text"
+                            placeholder="Enter Example Text">
+                    </div>
+                    <div class="form-group">
+                        <label for="example-text">Movie Img</label>
+                        <input type="text" id="movie-img" class="form-control" aria-describedby="example-text"
+                            placeholder="Enter Example Text">
+                    </div> -->
+                    <div class="form-group">
+                        <label for="example-description">User Name</label>
+                        <textarea class="form-control" id="user-name" aria-describedby="example-description"
+                            placeholder="Enter Example Description"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="example-description">User Review</label>
+                        <textarea class="form-control" id="user-review" aria-describedby="example-description"
+                            placeholder="Enter Example Description"></textarea>
+                    </div>
+                    <input id="user-rating" type="text" class="rating" data-size="lg">
+                    <button id="submit" class="btn btn-primary float-right" data-dismiss="modal">Submit</button>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
                     </div>
 
                 </div>
@@ -125,11 +188,10 @@
 
         </div>
 
-        <div id="home">
+        <!-- <div id="home">
             <div class="container">
                 <div class="row">
-                    <div class="col-8 offset-2">
-                        <!-- <h1>{{msg}}</h1> -->
+                     <div class="col-8 offset-2">
                         <h2>This is our Home Page!</h2>
                         <form class="clearfix mb-4" action="POST">
                             <div class="form-group">
@@ -165,9 +227,9 @@
                             <input id="user-rating" type="text" class="rating" data-size="lg">
                             <button id="submit" class="btn btn-primary float-right">Submit</button>
                         </div>
-                    </div>
-                </div>
-            </div>
+                    </div> -->
+                <!-- </div>
+            </div>  -->
 
             <!-- <script src="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
             <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
