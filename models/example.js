@@ -4,7 +4,7 @@ module.exports = function(sequelize, DataTypes) {
     movieTitle: {
       field: "movie_title",
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       validate: {
         len: [1]
       }
@@ -12,7 +12,7 @@ module.exports = function(sequelize, DataTypes) {
     movieLink: {
       field: "movie_link",
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       validate: {
         len: [1]
       }
@@ -20,7 +20,7 @@ module.exports = function(sequelize, DataTypes) {
     movieDesc: {
       field: "movie_desc",
       type: DataTypes.TEXT,
-      allowNull: false,
+      allowNull: true,
       validate: {
         len: [1]
       }
@@ -28,7 +28,7 @@ module.exports = function(sequelize, DataTypes) {
     movieImg: {
       field: "movie_Img",
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       validate: {
         len: [1]
       }
@@ -36,7 +36,7 @@ module.exports = function(sequelize, DataTypes) {
     userReview: {
       field: "user_review",
       type: DataTypes.TEXT,
-      allowNull: false,
+      allowNull: true,
       validate: {
         len: [1]
       }
@@ -49,7 +49,7 @@ module.exports = function(sequelize, DataTypes) {
     userName: {
       field: "username",
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       validate: {
         len: [1]
       }
