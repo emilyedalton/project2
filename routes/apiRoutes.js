@@ -37,13 +37,12 @@ module.exports = function(app) {
 
   // Create a new example
   app.post("/api/examples", function(req, res) {
-    db.Movie.create(req.body)
-      .then(function(dbMovie) {
-        res.json(dbMovie);
-      })
-      .catch(err => {
-        res.status(500).end(err);
-      });
+    db.Movie.create(req.body).then(function(dbMovie) {
+      res.json(dbMovie);
+    });
+    // .catch(err => {
+    //   res.status(500).end(err);
+    // });
   });
 
   // Delete an example by id
