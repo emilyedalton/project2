@@ -259,7 +259,7 @@ a {
 }
 
 main {
-  background-color: #dfddfc;
+  background: linear-gradient( #283c86, #45a247); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   width: 100vw;
   min-height: 100vh;
   display: flex;
@@ -356,7 +356,7 @@ main.is-dark ::-webkit-scrollbar-thumb {
   scroll-snap-type: mandatory;
   -webkit-overflow-scrolling: touch;
   align-self: flex-start;
-  background-color: rgba(239, 239, 239, 0.2);
+  /* background-color: rgba(239, 239, 239, 0.2); */
   display: flex;
   flex-flow: row nowrap;
   overflow-x: scroll;
