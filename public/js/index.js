@@ -4,6 +4,16 @@ var m1, m2, m3, m4, m5, m6;
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 
+// Random Shuffle
+
+function shuffle(a) {
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
 // The API object contains methods for each kind of requests
 var API = {
   saveExample: function(example) {
@@ -23,20 +33,37 @@ var API = {
     }).then(function(movieData) {
       //log the moviedata
       console.log(movieData);
+      var movieDataRandom = movieData.slice();
+      shuffle(movieDataRandom);
       //looping through each of the reviews and movie info
       for (var i = 0; i < movieData.length; i++) {
         //get a reference to the movietitle and populate it with the movie title
-        var movieTitle = $(".is-scroll-wrapper");
+        var movieTitle1 = $(".is-scroll-wrapper1");
+        var movieTitle2 = $(".is-scroll-wrapper2");
         var movieRev = $(".is-scroll-wrapper");
 
-        movieTitle.append(
+        movieTitle1.append(
+          $("<div class='card is-showcase is-blue'>").html(
+            `<img src= ${
+              movieDataRandom[i].movieImg
+            } style="height:100px; width: 70px; float: left;"> <br>
+            ${movieDataRandom[i].movieTitle} <br>
+            Description: ${movieDataRandom[i].movieDesc} <br>
+            User Name: ${movieDataRandom[i].userName} <br>
+            User Review: ${movieDataRandom[i].userReview}<br>
+            User Rating: ${movieDataRandom[i].userRating}/5`
+          )
+          // $("#user-rating").rating({displayOnly: true, step: 0.5})
+        );
+        movieTitle2.append(
           $("<div class='card is-showcase is-blue'>").html(
             `<img src= ${
               movieData[i].movieImg
-            } style="height:100px; width: 70px; float: left;">
-            ${movieData[i].movieTitle}  
-            user name: ${movieData[i].userName} 
-            User Review: ${movieData[i].userReview}
+            } style="height:100px; width: 70px; float: left;"> <br>
+            ${movieData[i].movieTitle} <br>
+            Description: ${movieData[i].movieDesc} <br>
+            User Name: ${movieData[i].userName} <br>
+            User Review: ${movieData[i].userReview} <br>
             User Rating: ${movieData[i].userRating}/5`
           )
           // $("#user-rating").rating({displayOnly: true, step: 0.5})
