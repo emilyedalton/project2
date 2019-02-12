@@ -35,6 +35,8 @@ var API = {
       console.log(movieData);
       var movieDataRandom = movieData.slice();
       shuffle(movieDataRandom);
+      $(".is-scroll-wrapper1").empty();
+      $(".is-scroll-wrapper2").empty();
       //looping through each of the reviews and movie info
       for (var i = 0; i < movieData.length; i++) {
         //get a reference to the movietitle and populate it with the movie title
@@ -44,10 +46,8 @@ var API = {
 
         movieTitle1.append(
           $("<div class='card is-showcase is-blue'>").html(
-            `<img src="${
-              movieDataRandom[i].movieImg
-            }" style="height:100px; width: 70px; float: left;"> <br>
-            ${movieDataRandom[i].movieTitle} <br>
+            `<img src="${movieDataRandom[i].movieImg}">
+            <b>${movieDataRandom[i].movieTitle}</b> <br>
             Description: ${movieDataRandom[i].movieDesc} <br>
             User Name: ${movieDataRandom[i].userName} <br>
             User Review: ${movieDataRandom[i].userReview}<br>
@@ -57,9 +57,7 @@ var API = {
         );
         movieTitle2.append(
           $("<div class='card is-showcase is-blue'>").html(
-            `<img src= ${
-              movieData[i].movieImg
-            } style="height:100px; width: 70px; float: left;"> <br>
+            `<img src= ${movieData[i].movieImg}"> <br>
             ${movieData[i].movieTitle} <br>
             Description: ${movieData[i].movieDesc} <br>
             User Name: ${movieData[i].userName} <br>
