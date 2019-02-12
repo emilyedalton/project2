@@ -724,6 +724,12 @@ header button:focus {
   padding: 12px 6px;
   width: 100%;
 }
+.main.is-dark .card.is-blue {
+  background-color: #111;
+  color: #dadada;
+  background-image: none;
+  border-color: gray;
+}
 .card.is-blue {
   background: linear-gradient( #155799,  #159957); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   border-radius: 25px;
