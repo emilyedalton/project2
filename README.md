@@ -34,6 +34,5 @@ Directions for future UI development are: Integrating the visuals for the star r
 * [Node](https://nodejs.org/en/)
 * [Bootstrap-star-rating](https://www.npmjs.com/package/bootstrap-star-rating)
 
-## Dirctions for future development
 
 

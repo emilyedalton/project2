@@ -4,18 +4,12 @@ module.exports = function(sequelize, DataTypes) {
     movieTitle: {
       field: "movie_title",
       type: DataTypes.STRING,
-      allowNull: true,
-      validate: {
-        len: [1]
-      }
+      allowNull: true
     },
     movieLink: {
       field: "movie_link",
       type: DataTypes.STRING,
-      allowNull: true,
-      validate: {
-        len: [1]
-      }
+      allowNull: true
     },
     movieDesc: {
       field: "movie_desc",
@@ -28,18 +22,12 @@ module.exports = function(sequelize, DataTypes) {
     movieImg: {
       field: "movie_Img",
       type: DataTypes.STRING,
-      allowNull: true,
-      validate: {
-        len: [1]
-      }
+      allowNull: true
     },
     userReview: {
       field: "user_review",
       type: DataTypes.TEXT,
-      allowNull: true,
-      validate: {
-        len: [1]
-      }
+      allowNull: true
     },
     userRating: {
       field: "user_rating",
@@ -49,10 +37,7 @@ module.exports = function(sequelize, DataTypes) {
     userName: {
       field: "username",
       type: DataTypes.STRING,
-      allowNull: true,
-      validate: {
-        len: [1]
-      }
+      allowNull: true
     }
   });
   return Movie;
