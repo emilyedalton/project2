@@ -5,6 +5,11 @@
   box-sizing: border-box;
 }
 
+.catshadow {
+  text-shadow: 3px 3px 16px gray;
+  padding: 12px 10px 0px 0px;
+}
+
 .columns.is-full, .columns.is-left {
   display: flex;
 }
