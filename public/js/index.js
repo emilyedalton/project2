@@ -35,6 +35,8 @@ var API = {
       console.log(movieData);
       var movieDataRandom = movieData.slice();
       shuffle(movieDataRandom);
+      $(".is-scroll-wrapper1").empty();
+      $(".is-scroll-wrapper2").empty();
       //looping through each of the reviews and movie info
       for (var i = 0; i < movieData.length; i++) {
         //get a reference to the movietitle and populate it with the movie title
@@ -44,10 +46,8 @@ var API = {
 
         movieTitle1.append(
           $("<div class='card is-showcase is-blue'>").html(
-            `<img src= ${
-              movieDataRandom[i].movieImg
-            } style="height:100px; width: 70px; float: left;"> <br>
-            ${movieDataRandom[i].movieTitle} <br>
+            `<img src="${movieDataRandom[i].movieImg}">
+            <b>${movieDataRandom[i].movieTitle}</b> <br>
             Description: ${movieDataRandom[i].movieDesc} <br>
             User Name: ${movieDataRandom[i].userName} <br>
             User Review: ${movieDataRandom[i].userReview}<br>
@@ -57,9 +57,7 @@ var API = {
         );
         movieTitle2.append(
           $("<div class='card is-showcase is-blue'>").html(
-            `<img src= ${
-              movieData[i].movieImg
-            } style="height:100px; width: 70px; float: left;"> <br>
+            `<img src= ${movieData[i].movieImg}"> <br>
             ${movieData[i].movieTitle} <br>
             Description: ${movieData[i].movieDesc} <br>
             User Name: ${movieData[i].userName} <br>
@@ -76,6 +74,7 @@ var API = {
           )
         );
       }
+      return movieData;
     });
   },
 
@@ -89,36 +88,37 @@ var API = {
 };
 // refreshExamples gets new examples from the db and repopulates the list
 var refreshExamples = function() {
-  API.getExamples().then(function(data) {
-    var $examples = data.map(function(data) {
-      var $a = $("<a>")
-        .text(data.text)
-        .attr("href", "/example/" + data.id);
+  API.getExamples();
+  // .then(function(data) {
+  //   var $examples = data.map(function(data) {
+  //     var $a = $("<a>")
+  //       .text(data.text)
+  //       .attr("href", "/example/" + data.id);
 
-      var $li = $("<li>")
-        .attr({
-          class: "list-group-item",
-          "data-id": data.id
-        })
-        .append($a);
+  //     var $li = $("<li>")
+  //       .attr({
+  //         class: "list-group-item",
+  //         "data-id": data.id
+  //       })
+  //       .append($a);
 
-      var $button = $("<button>")
-        .addClass("btn btn-danger float-right delete")
-        .text("ｘ");
+  //     var $button = $("<button>")
+  //       .addClass("btn btn-danger float-right delete")
+  //       .text("ｘ");
 
-      $li.append($button);
+  //     $li.append($button);
 
-      return $li;
-    });
+  //     return $li;
+  //   });
 
-    $exampleList.empty();
-    $exampleList.append($examples);
-  });
+  //   $exampleList.empty();
+  //   $exampleList.append($examples);
+  // });
 };
 
 // handleFormSubmit is called whenever we submit a new example
 // Save the new example to the db and refresh the list
-$("#submit").on("click", function() {});
+// $("#submit").on("click", function() {});
 // var num = 10;
 var handleFormSubmit = function(event) {
   event.preventDefault();
@@ -133,32 +133,32 @@ var handleFormSubmit = function(event) {
     m2 = response.Website;
     m3 = response.Plot;
     m4 = response.Poster;
-  });
-  m5 = $("#user-review")
-    .val()
-    .trim();
-  m6 = $("#user-name")
-    .val()
-    .trim();
+    m5 = $("#user-review")
+      .val()
+      .trim();
+    m6 = $("#user-name")
+      .val()
+      .trim();
 
-  var newMovie = {
-    movieTitle: m1,
-    movieLink: m2,
-    movieDesc: m3,
-    movieImg: m4,
-    userReview: $("#user-review")
-      .val()
-      .trim(),
-    userName: $("#user-name")
-      .val()
-      .trim(),
-    userRating: $("#user-rating")
-      .val()
-      .trim()
-  };
+    var newMovie = {
+      movieTitle: m1,
+      movieLink: m2,
+      movieDesc: m3,
+      movieImg: m4,
+      userReview: $("#user-review")
+        .val()
+        .trim(),
+      userName: $("#user-name")
+        .val()
+        .trim(),
+      userRating: $("#user-rating")
+        .val()
+        .trim()
+    };
 
-  API.saveExample(newMovie).then(function() {
-    refreshExamples();
+    API.saveExample(newMovie).then(function() {
+      refreshExamples();
+    });
   });
 };
 

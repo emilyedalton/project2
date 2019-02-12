@@ -9,17 +9,19 @@ div.card.is-showcase.is-blue img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 100%;
-  height: 100%;
-  padding: 20px 100px 0px 50px;
+  width: auto;
+  height: 200px;
+  /* padding: 20px 100px 0px 50px; */
 }
 
 div.card.is-showcase.is-blue {
   font-size: 15px;
-  display: block;
+  display: inline-grid;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 100%;
+  height: 100%;
+  text-align: center;
 }
 
 .catshadow {

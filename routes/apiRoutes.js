@@ -31,6 +31,7 @@ module.exports = function(app) {
         res.json(dbMovie);
       })
       .catch(err => {
+        console.log("get examples error: ", err);
         res.status(500).end(err);
       });
   });
