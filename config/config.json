@@ -1,7 +1,7 @@
 {
     "development": {
-      "username": "tcho",
-      "password": "Timchochanel7381!",
+      "username": "emilyedalton",
+      "password": "awesomepassword",
       "database": "movie_db",
       "host": "localhost",
       "dialect": "mysql"
