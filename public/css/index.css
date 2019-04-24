@@ -4,38 +4,35 @@
 *:after {
   box-sizing: border-box;
 } */
+img{   
+  max-width: 100%;
+  height: 80px; 
 
+}
 .imageMove{
   float: left;
   border:solid 4px red;
-  height: 100px;
+  height: 200px;
 }
 .find{
   border:solid 4px orange;
+  text-overflow: ellipsis;
+  overflow: hidden;
 
 }
-/* div.card.is-showcase.is-blue img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: auto;
-  height: 100px;
-  float:left;
-  border: 2px soild rgb(255, 149, 111);
 
-  /* padding: 20px 100px 0px 50px; 
-} */
 
 div.card.is-showcase.is-blue {
   font-size: 15px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  /* margin-left: auto;
-  margin-right: auto; */
-  /* height: 150px; 
-  width: 100%; */
+  margin-left: auto;
+  margin-right: auto; 
+  height: 100%;
+  width: 300px;
   border: 2px solid black;
+ 
 
 }
 
@@ -373,7 +370,7 @@ main.is-dark ::-webkit-scrollbar-thumb {
 }
 
 .is-full-width {
-  width: 100%;
+  /* width: 100%; */
 }
 
 .is-relative {
@@ -399,7 +396,7 @@ main.is-dark ::-webkit-scrollbar-thumb {
 .is-absolute.is-left {
   left: 0;
 }
-
+/* -- parent div of .is-scroll-wrapper1 --- */
 .has-horizontal-scroll {
   /* scroll-snap-points-x: repeat(33%); */
   scroll-snap-type: mandatory;
@@ -416,16 +413,18 @@ main.is-dark ::-webkit-scrollbar-thumb {
 } 
 .has-horizontal-scroll.is-transparent {
   background-color: transparent;
-  border: solid 2px blue;
 }
 .has-horizontal-scroll.has-auto-scroll {
   overflow: hidden;
 
 }
+/* --setting width: 100% makes divs all narrow-- */
 .has-horizontal-scroll.has-auto-scroll .is-scroll-wrapper1 {
   animation: marquee 16s linear infinite;
   display: flex;
-  width: 100%;
+  flex-shrink: 0;
+  height: 400px;
+  /* width: 100%; */
   border: 3px solid blueviolet;
 }
 .has-horizontal-scroll.has-auto-scroll .is-scroll-wrapper2 {
@@ -712,12 +711,10 @@ header button:focus {
 }
 .card.is-showcase {
   color: #fff;
-  height: 200px;
-  padding: 24px 12px;
-  border: 2px solid red;
+   padding: 24px 12px;
 }
 .card.is-showcase, .card.is-quote {
-  min-height: 180px;
+  /* min-height: 180px; */
   border: 2px solid red;
 
 }
@@ -762,7 +759,7 @@ header button:focus {
   padding: 6px;
   display: flex;
   flex-flow: row wrap;
-  width: 100%;
+  /* width: 100%; */
 }
 .card.is-quote .card-bio {
   align-self: flex-start;
@@ -771,11 +768,11 @@ header button:focus {
   height: 36px;
   flex-flow: row nowrap;
   justify-content: flex-start;
-  width: 100%;
+  /* width: 100%; */
 }
 .card.is-quote .card-bio > * {
   padding: 0 4px;
-  width: auto;
+  /* width: auto; */
 }
 .card.is-quote .card-bio i {
   font-size: 24px;
@@ -785,7 +782,7 @@ header button:focus {
   flex: 0 0 100%;
   height: calc(100% - 36px);
   padding: 12px 6px;
-  width: 100%;
+  /* width: 100%; */
 }
 .main.is-dark .card.is-blue {
   background-color: #111;
@@ -849,7 +846,7 @@ header button:focus {
   border-radius: 0;
   height: 100%;
   min-height: 160px;
-  min-width: 200px;
+  /* min-width: 200px; */
 }
 
 .card.is-recommended .card-content {
@@ -963,7 +960,7 @@ header button:focus {
   color: white;
   height: 54px;
   right: -6px;
-  width: 54px;
+  /* width: 54px; */
   will-change: transform;
   transition: box-shadow 400ms cubic-bezier(0.2, 0, 0.7, 1), transform 200ms cubic-bezier(0.2, 0, 0.7, 1);
 }

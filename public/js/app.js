@@ -46,13 +46,14 @@ var API = {
 
         movieTitle1.append(
           $("<div class='card is-showcase is-blue'>").html(
-            `<div class = "has-horizontal-scroll">
+            `
+            <div class ="find">
+            <h2>${movieDataRandom[i].movieTitle}</h2> <br>
             <img class='imageMove' src="${movieDataRandom[i].movieImg}">
-            <b>${movieDataRandom[i].movieTitle}</b> <br>
-           <div class ="find"> Description: ${movieDataRandom[i].movieDesc}</div>
-           <div class ="find"> User Name: ${movieDataRandom[i].userName} </div>
-           <div class ="find">   User Review: ${movieDataRandom[i].userReview}</div>
-           <div class ="find">  User Rating: ${movieDataRandom[i].userRating}/5</div></div>`
+            Description: ${movieDataRandom[i].movieDesc}
+            User Name: ${movieDataRandom[i].userName}
+            User Review: ${movieDataRandom[i].userReview}
+             User Rating: ${movieDataRandom[i].userRating}/5</div>`
           )
           // $("#user-rating").rating({displayOnly: true, step: 0.5})
         );
