@@ -40,6 +40,8 @@ div.card.is-showcase.is-blue {
   height: 100%;
   width: 100%;
   border: 2px solid black;
+  flex: 1;
+
 
 }
 

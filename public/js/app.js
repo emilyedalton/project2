@@ -52,7 +52,6 @@ var API = {
             <img class='imageMove' src="${movieDataRandom[i].movieImg}">
             Description: ${movieDataRandom[i].movieDesc}
             User Name: ${movieDataRandom[i].userName}
-            User Review: ${movieDataRandom[i].userReview}
              User Rating: ${movieDataRandom[i].userRating}/5</div>`
           )
           // $("#user-rating").rating({displayOnly: true, step: 0.5})
@@ -61,7 +60,6 @@ var API = {
           $("<div class='card is-showcase is-blue'>").html(
             `<img src= ${movieData[i].movieImg}"> <br>
             ${movieData[i].movieTitle} <br>
-            Description: ${movieData[i].movieDesc} <br>
             User Name: ${movieData[i].userName} <br>
             User Review: ${movieData[i].userReview} <br>
             User Rating: ${movieData[i].userRating}/5`
